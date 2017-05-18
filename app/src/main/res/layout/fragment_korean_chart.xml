@@ -1,0 +1,95 @@
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="280dp"
+    android:layout_width="match_parent">
+    <!--android:fillViewport="true"-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:orientation="vertical"
+        tools:context="com.example.tiennguyen.layoutmusicapplication.homefrg.VietChartFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/gold_reward"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="1"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    />
+
+            </LinearLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginLeft="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/id_homefrg_tablayout_num1_imagek"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/slider_background" />
+                <LinearLayout
+                    android:paddingLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:id="@+id/id_homefrg_tablayout_num1_songnamek"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/song_name"
+                        android:textSize="15sp"
+                        android:layout_weight="2"
+                        android:textColor="#fff"
+                        />
+                    <TextView
+                        android:id="@+id/id_homefrg_tablayout_num1_artistk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/artist"
+                        android:textSize="12sp"
+                        android:layout_weight="1"
+                        android:textColor="#fff"
+                        />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/id_homefrg_tablayout_chartlistk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/chart_song_item">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
