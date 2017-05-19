@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.main_content, new HomeFragment());
                         fragmentTransaction.commit();
-                        getSupportActionBar().setTitle("Home Fragment");
+                        getSupportActionBar().setTitle("Home");
                         item.setCheckable(true);
                         drawerLayout.closeDrawers();
                         break;
@@ -70,7 +70,23 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.main_content, new SettingFragment());
                         fragmentTransaction.commit();
-                        getSupportActionBar().setTitle("Setting Fragment");
+                        getSupportActionBar().setTitle("Setting");
+                        item.setCheckable(true);
+                        drawerLayout.closeDrawers();
+                        break;
+                    case R.id.id_album:
+                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.main_content, new AlbumFragment());
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle("Album");
+                        item.setCheckable(true);
+                        drawerLayout.closeDrawers();
+                        break;
+                    case R.id.id_hot:
+                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.main_content, new HotSongListFragment());
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle("Bài hát Hot");
                         item.setCheckable(true);
                         drawerLayout.closeDrawers();
                         break;

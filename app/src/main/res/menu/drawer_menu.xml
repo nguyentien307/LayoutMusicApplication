@@ -8,7 +8,7 @@
         <item
             android:id="@+id/id_home"
             android:title="Home"
-            android:icon="@drawable/ic_android_black_24dp"
+            android:icon="@drawable/ic_home"
             >
         </item>
 
@@ -16,14 +16,14 @@
         <item
             android:id="@+id/id_album"
             android:title="Album"
-            android:icon="@drawable/ic_android_black_24dp"
+            android:icon="@drawable/ic_album"
             >
         </item>
 
         <item
             android:id="@+id/id_hot"
             android:title="Hot Song"
-            android:icon="@drawable/ic_android_black_24dp"
+            android:icon="@drawable/ic_hotsong"
             >
         </item>
 
@@ -33,16 +33,15 @@
         <menu>
             <item
                 android:id="@+id/id_volume"
-                android:icon="@drawable/ic_android_black_24dp"
+                android:icon="@drawable/ic_volume"
                 app:actionLayout="@layout/volumn_layout"
                 android:title="">
 
             </item>
 
-
             <item android:title="More Settings ..."
                 android:id="@+id/id_settings"
-                android:icon="@drawable/ic_android_black_24dp">
+                android:icon="@drawable/ic_settings">
 
             </item>
         </menu>

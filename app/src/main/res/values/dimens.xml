@@ -19,4 +19,10 @@
     <dimen name="ic_album_overflow_height">30dp</dimen>
     <dimen name="ic_album_overflow_margin_top">10dp</dimen>
     <dimen name="shaddow">5dp</dimen>
+
+    <dimen name="activity_player_icon">40dp</dimen>
+    <dimen name="activity_player_play">60dp</dimen>
+    <dimen name="activity_player_back">40dp</dimen>
+    <dimen name="activity_player_shuffle">30dp</dimen>
+    <dimen name="fragment_player">30dp</dimen>
 </resources>
