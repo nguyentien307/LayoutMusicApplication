@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    aaptOptions {
+        cruncherEnabled = false
+    }
 }
 
 dependencies {
@@ -35,4 +38,5 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'org.jsoup:jsoup:1.10.2'
     testCompile 'junit:junit:4.12'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 }

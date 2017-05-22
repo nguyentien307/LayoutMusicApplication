@@ -1,6 +1,7 @@
 package com.example.tiennguyen.layoutmusicapplication.homefrg;
 
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -13,9 +14,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.example.tiennguyen.layoutmusicapplication.ActivityPlayer;
 import com.example.tiennguyen.layoutmusicapplication.Album;
 import com.example.tiennguyen.layoutmusicapplication.AlbumAdapter;
 import com.example.tiennguyen.layoutmusicapplication.AlbumFragment;
@@ -256,25 +259,25 @@ public class HomeFragment extends Fragment {
                 Helper.getListViewSize(listViewHotSong);
 
 
-//                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                    @Override
-//                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                        Intent player = new Intent(getActivity(), Player.class);
-//                        arrayBaiHat = new ArrayList<>();
-//                        arrayBaiHat.add(listBXHVietCode.get(i));
-//                        arrayBaiHat.add(listBXHViet.get(i).getTitle());
-//                        arrayBaiHat.add(listBXHViet.get(i).getArtist());
-//                        arrayBaiHat.add(listBXHViet.get(i).getUrl());
-//                        arrayBaiHat.add(listBXHViet.get(i).getLiric());
-//                        arrayBaiHat.add(listBXHViet.get(i).getBgcover());
-//                        arrayBaiHat.add(listBXHViet.get(i).getMv());
-//                        arrayBaiHat.add(listBXHViet.get(i).getArtisturl());
-//                        player.putStringArrayListExtra("arrSong", arrayBaiHat);
-//                        startActivity(player);
-//                        //Intent player = new Intent(MainActivity.this, Player.class);
-//                        //startActivity(player);
-//                    }
-//                });
+                listViewHotSong.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent player = new Intent(getActivity(), ActivityPlayer.class);
+                        ArrayList<String> arrayBaiHat = new ArrayList<>();
+                        arrayBaiHat.add(arrayListHotSongCode.get(i));
+                        arrayBaiHat.add(arrayListHotSong.get(i).getTitle());
+                        arrayBaiHat.add(arrayListHotSong.get(i).getArtist());
+                        arrayBaiHat.add(arrayListHotSong.get(i).getUrl());
+                        arrayBaiHat.add(arrayListHotSong.get(i).getLiric());
+                        arrayBaiHat.add(arrayListHotSong.get(i).getBgcover());
+                        arrayBaiHat.add(arrayListHotSong.get(i).getMv());
+                        arrayBaiHat.add(arrayListHotSong.get(i).getArtisturl());
+                        player.putStringArrayListExtra("arrSong", arrayBaiHat);
+                        startActivity(player);
+                        //Intent player = new Intent(MainActivity.this, Player.class);
+                        //startActivity(player);
+                    }
+                });
             }
         }
     }
