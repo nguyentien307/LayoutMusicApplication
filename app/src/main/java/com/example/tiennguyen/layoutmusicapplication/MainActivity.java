@@ -8,15 +8,20 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 
 import com.example.tiennguyen.layoutmusicapplication.homefrg.HomeFragment;
+import com.example.tiennguyen.layoutmusicapplication.homefrg.SearchFragment;
 import com.example.tiennguyen.layoutmusicapplication.settingfrg.SettingFragment;
 
-public class MainActivity extends AppCompatActivity {
+import java.text.Normalizer;
+import java.util.regex.Pattern;
+
+public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -107,7 +112,36 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activit_main_action,menu);
+        MenuItem search = menu.findItem(R.id.id_search);
+        SearchView edSearch = (SearchView) search.getActionView();
+        edSearch.setOnQueryTextListener(this);
         return true;
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        StringUtils utils = new StringUtils();
+        String searchName = utils.unAccent(query);
+        Bundle bundle = new Bundle();
+        bundle.putString("searchName", searchName);
+        SearchFragment searchFragment = new SearchFragment();
+        searchFragment.setArguments(bundle);
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.main_content, searchFragment).commit();
+        return true;
+    }
+
+    @Override
+    public boolean onQueryTextChange(final String newText) {
+        return true;
+    }
+
+    public static class StringUtils{
+        public static String unAccent(String s) {
+            String temp = Normalizer.normalize(s, Normalizer.Form.NFD);
+            Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
+            return pattern.matcher(temp).replaceAll("").replaceAll("Đ", "D").replaceAll("đ", "d").replaceAll(" ", "+");
+        }
     }
 
     public  void setActionBarTitle(String title){

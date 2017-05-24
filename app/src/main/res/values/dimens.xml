@@ -20,9 +20,9 @@
     <dimen name="ic_album_overflow_margin_top">10dp</dimen>
     <dimen name="shaddow">5dp</dimen>
 
-    <dimen name="activity_player_icon">40dp</dimen>
-    <dimen name="activity_player_play">60dp</dimen>
-    <dimen name="activity_player_back">40dp</dimen>
-    <dimen name="activity_player_shuffle">30dp</dimen>
+    <dimen name="activity_player_icon">30dp</dimen>
+    <dimen name="activity_player_play">40dp</dimen>
+    <dimen name="activity_player_back">30dp</dimen>
+    <dimen name="activity_player_shuffle">25dp</dimen>
     <dimen name="fragment_player">25dp</dimen>
 </resources>
